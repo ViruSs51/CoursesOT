@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+:root {
+    --color0: #FFFFFF;
+    --color1: #E0D5E6;
+    --color2: #BEA8CF;
+    --color3: #9980B9;
+    --color4: #755EA2;
+    --color5: #52408A;
+    --color6: #352873;
+    --color7: #1C155D;
+    --color8: #000000;
+    --link: #0033FF;
+    --done: #5EA25E;
+    --incorrect: #A25E5E;
+}
+
+.content_shadow {
+    box-shadow: -1px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.title, .subtitle, .p, .mini, .tags { 
+    font-family: "Albert Sans", Helvetica, sans-serif;
+}
+.title {
+    font-size: 24px;
+	font-weight: 600;
+}
+.subtitle {
+    font-size: 20px;
+	font-weight: 500;
+    font-style: medium;
+}
+.p {
+    font-size: 16px;
+	font-weight: 400;
+    font-style: medium;
+}
+.mini {
+    font-size: 13px;
+	font-weight: 400;
+    font-style: normal;
+}
+.tags {
+    font-size: 10px;
+	font-weight: 500;
+    font-style: medium;
+}
