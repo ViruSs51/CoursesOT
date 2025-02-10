@@ -5,6 +5,7 @@ class Tag(models.Model):
     id = models.AutoField(primary_key=True, editable=False)
     title = models.CharField(max_length=60, blank=True, null=True)
     description = models.TextField(blank=True, null=True)
+    usage_count = models.PositiveBigIntegerField(default=0)
     create_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self) -> str:
