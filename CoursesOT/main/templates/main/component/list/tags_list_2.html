@@ -1,0 +1,7 @@
+<div class="tags-list-2-head">
+    <div class="tags-list-2">
+        {% for tag in tags %}
+            {% include "main/component/table/table_1_type_1.html" with text=tag.title %}
+        {% endfor %}
+    </div>
+</div>

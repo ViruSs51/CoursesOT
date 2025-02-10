@@ -1,0 +1,10 @@
+<div class="tags-list-1-head">
+    <form action="{% url 'home_page' %}" method="GET" class="tags-list-1">
+        {% csrf_token %}
+        <input type="hidden" name="tag" id="selected-tag" value="">
+
+        {% for tag in tags %}
+            {% include "main/component/button/button_1_type_1.html" with text=tag.title %}
+        {% endfor %}
+    </form>
+</div>
