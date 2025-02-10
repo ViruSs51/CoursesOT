@@ -1,5 +1,6 @@
 import os
 from pathlib import Path
+from .models import Tag
 
 def load_svg() -> dict:
     BASE_DIR = Path(__file__).parent.parent
@@ -14,3 +15,8 @@ def load_svg() -> dict:
                     data['_'.join(f.split('.svg')[0].split('-'))] = icon.read()
 
     return data
+
+def get_tags():
+    tags = Tag.objects.all()
+
+    return tags.order_by('-usage_count')
