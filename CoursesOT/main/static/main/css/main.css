@@ -21,6 +21,10 @@ body, .wrapper {
     width: 412px;
     height: 100vh;
 }
+.head {
+    flex-direction: row;
+    align-items: flex-start;
+}
 .content {
     flex-grow: 1;
 }

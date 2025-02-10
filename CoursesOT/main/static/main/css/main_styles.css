@@ -30,12 +30,12 @@
 .subtitle {
     font-size: 20px;
 	font-weight: 500;
-    font-style: medium;
+    font-style: normal;
 }
 .p {
     font-size: 16px;
 	font-weight: 400;
-    font-style: medium;
+    font-style: normal;
 }
 .mini {
     font-size: 13px;
@@ -45,5 +45,5 @@
 .tags {
     font-size: 10px;
 	font-weight: 500;
-    font-style: medium;
+    font-style: normal;
 }
