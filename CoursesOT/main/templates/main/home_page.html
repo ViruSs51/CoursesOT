@@ -4,7 +4,9 @@
 
 
 {% block head %}
-    <h1 class="tags">CourseOT</h1>
+    {% include "main/component/list/tags_list_1.html" %}
+    {% include "main/component/list/tags_list_2.html" %}
+    {% include "main/component/table/table_1_type_2.html" with text='English' icon_url=icons.language_icon %}
 {% endblock head %}
 
 
