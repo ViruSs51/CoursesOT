@@ -1,13 +1,12 @@
 import asyncio
+from gc import callbacks
 import logging
 import os
 from pathlib import Path
 from dotenv import load_dotenv, set_key
 from aiogram import Bot, Dispatcher, types
 from aiogram.types import WebAppInfo
-from aiogram.enums import ParseMode
 from pyngrok import ngrok
-
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +24,8 @@ dp = Dispatcher()
 @dp.message()
 async def start_command(message: types.Message):
     web_button = types.InlineKeyboardButton(
-        text='🌐 Open Web App', web_app=WebAppInfo(url=WEB_APP_URL)
+        text='🌐 Open Web App', 
+        web_app=WebAppInfo(url=WEB_APP_URL + '/user/auth' + '?bot_name=coursesotbot')
     )
     keyboard = types.InlineKeyboardMarkup(
         inline_keyboard=[[web_button]]

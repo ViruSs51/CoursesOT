@@ -1,0 +1,11 @@
+{% extends "main/main.html" %}
+
+{% block title %}User Authentication{% endblock title %}
+
+{% block content %}
+    {% include 'main/component/table/message_1.html' with message_title='Authentication' message='Authentication is in progress, please wait...<br>if nothing happens, re-enter' %}
+{% endblock content %}
+
+{% block body %}
+    <script src="{% url 'serve_js' %}"></script>
+{% endblock body %}

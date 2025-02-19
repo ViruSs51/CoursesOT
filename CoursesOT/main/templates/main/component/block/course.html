@@ -1,0 +1,28 @@
+{% load custom_filters %}
+
+<div class="block-course">
+    <div class="block-course__column">
+        <div class="block-course__banner">
+            {% with banner=medias|get_item_id:banner_id %}
+                <img src="{{ banner.file.url }}">
+            {% endwith %}
+        </div>
+        <div class="block-course__content">
+            <div class="block-course__content-head">
+                <p class="subtitle">{{ title }}</p>
+                <p class="title">{{ price }}$</p>
+            </div>
+            <div class="block-course__details">
+
+            </div>
+        </div>
+    </div>
+    <div class="block-course__column">
+        <div class="block-course__categories">
+
+        </div>
+        <div class="block-course__button">
+
+        </div>
+    </div>
+</div>

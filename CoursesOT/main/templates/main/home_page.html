@@ -1,4 +1,5 @@
 {% extends "main/main.html" %}
+{% load custom_filters %}
 
 {% block title %}CourseOT{% endblock title %}
 
@@ -7,6 +8,11 @@
     {% include "main/component/list/tags_list_1.html" %}
     {% include "main/component/list/tags_list_2.html" %}
     {% include "main/component/table/table_1_type_2.html" with text='English' icon_url=icons.language_icon %}
+    {% for course in courses %}
+        {% with medias=courses_media|get_item:course.id %}
+            {% include "main/component/block/course.html" with title=course.title price=course.price medias=medias banner_id=course.content|get_item:'banner' %} 
+        {% endwith %}
+    {% endfor %}
 {% endblock head %}
 
 
@@ -16,5 +22,5 @@
 
 
 {% block footer %}
-
+    <a href="{% url "logout" %}">LOGOUT</a>
 {% endblock footer %}
