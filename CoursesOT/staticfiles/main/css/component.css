@@ -1,20 +1,148 @@
-.button-1-type-1 {
-    display: inline-flex;
+.button-1-type-1, .button-1-type-2, .button-2-type-1 {
+    display: flex;
     align-items: center;
+    gap: 10px;
+    justify-content: center;
     padding: 5px 15px;
     background-color: var(--color4);
     overflow: hidden;
     border-radius: 10px;
+    flex: 0 0 auto;
 }
 .button-1-type-1 p, .button-1-type-2 p {
     color: var(--color0);
 }
 
 .button-1-type-2 {
-    display: inline-flex;
-    align-items: center;
     padding: 7px 10px;
-    background-color: var(--color4);
-    overflow: hidden;
     border-radius: 15px;
+}
+
+.button-2-type-1 {
+    width: 40px;
+    height: 40px;
+    padding: 1px 6px;
+    border-radius: 20px;
+}
+
+.table-1-type-1, .table-1-type-2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    padding: 5px 6px;
+    background-color: var(--color3);
+    overflow: hidden;
+    border-radius: 5px;
+    flex: 0 0 auto;
+}
+.table-1-type-1 p {
+    color: var(--color0);
+}
+.table-1-type-2 {
+    background-color: transparent;
+    padding: 0;
+}
+.table-1-type-2 svg, .table-1-type-2 path {
+    stroke: var(--color7);
+    color: var(--color7);
+}
+.table-1-type-2 p {
+    color: var(--color7);
+}
+
+.tags-list-1-head, .tags-list-2-head {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 100%;
+}
+.tags-list-1, .tags-list-2 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    overflow: auto hidden;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    padding: 0 10px 10px 10px;
+}
+
+.tags-list-2 {
+    padding: 0;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.block-course {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color2);
+    overflow: hidden;
+    width: 100%;
+    border-radius: 15px;
+    padding: 10px;
+    gap: 10px;
+}
+.block-course p {
+    color: var(--color4);
+}
+.block-course__column {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+.block-course__banner {
+    border-radius: 15px;
+    overflow: hidden;
+    width: 98px;
+    height: 82px;
+    border: solid 1px var(--color3);
+}
+.block-course__banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.block-course__content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.block-course__content-head, .block-course__details {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.block-course__content-head {
+    justify-content: space-between;
+}
+
+.message-1 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.message-1__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+    align-items: center;
+    background-color: var(--color4);
+    padding: 15px 10px 25px 10px;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    border-radius: 21px;
+}
+.message-1__message-title {
+    width: 100%;
+    text-align: center;
+    color: var(--color1);
+}
+.message-1__message {
+    color: var(--color1);
 }

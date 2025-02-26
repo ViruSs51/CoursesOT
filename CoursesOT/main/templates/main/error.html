@@ -1,0 +1,7 @@
+{% extends "main/main.html" %}
+
+{% block title %}{{ status }}{% endblock title %}
+
+{% block content %}
+    {% include 'main/component/table/message_1.html' with message_title=status message=message %}
+{% endblock content %}

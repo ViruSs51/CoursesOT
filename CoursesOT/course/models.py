@@ -13,6 +13,7 @@ class Course(models.Model):
     start_at = models.DateTimeField(blank=True, null=True)
     finish_at = models.DateTimeField(blank=True, null=True)
     language = models.CharField(max_length=30, default='english')
+    content = models.JSONField()
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self) -> str:

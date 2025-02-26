@@ -24,17 +24,20 @@ load_dotenv(ENV_PATH)
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
-WEB_APP_URL = os.getenv('WEB_APP_URL')
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 ENV_PATH = BASE_DIR / '.env'
 load_dotenv(ENV_PATH)
 
+SECRET_KEY = os.getenv('SECRET_KEY')
+WEB_APP_URL = os.getenv('WEB_APP_URL')
+
 DB_NAME = os.getenv('DB_NAME')
 DB_USER = os.getenv('DB_USER')
 DB_PASSWORD = os.getenv('DB_PASSWORD')
 DB_HOST = os.getenv('DB_HOST')
+
+BOT_TOKEN = os.getenv('BOT_TOKEN')
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(ENV_PATH)
@@ -60,7 +63,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'course',
-    'user_app'
+    'user_app',
+    'api',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -72,6 +77,14 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    WEB_APP_URL, 
+    "https://web.telegram.org" 
+]
+CSRF_TRUSTED_ORIGINS = CORS_ALLOWED_ORIGINS
+
+MIDDLEWARE.insert(0, "corsheaders.middleware.CorsMiddleware")
 
 ROOT_URLCONF = 'CoursesOT.urls'
 
@@ -146,7 +159,21 @@ STATIC_URL = 'static/'
 #STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+X_FRAME_OPTIONS = 'ALLOWALL'
+SESSION_COOKIE_SAMESITE = "None"
+SESSION_COOKIE_NAME = 'sessionid'
+SESSION_COOKIE_SECURE = True
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_AGE = 60 * 60 * 2
+SESSION_SAVE_EVERY_REQUEST = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = False
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+
+LOGIN_URL = '/user/auth/'
