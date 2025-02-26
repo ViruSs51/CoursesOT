@@ -70,14 +70,19 @@ def create_session(request):
             username = user_data.get('username', f'user_{telegram_id}')
             first_name = user_data.get('first_name', None)
             last_name = user_data.get('last_name', None)
-    
-            user, created = User.objects.get_or_create(
-                username=username, 
-                telegram_id=telegram_id,
-                first_name=first_name, 
-                last_name=last_name,
-                is_active=True
-            )
+
+            try:
+                user= User.objects.get(
+                    telegram_id=telegram_id
+                )
+            except User.DoesNotExist:
+                user = User.objects.create(
+                    username=username, 
+                    telegram_id=telegram_id,
+                    first_name=first_name, 
+                    last_name=last_name,
+                    is_active=True
+                )
 
             user.backend = 'django.contrib.auth.backends.ModelBackend'
             django_login(request, user)

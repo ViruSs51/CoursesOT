@@ -9,20 +9,33 @@
         </div>
         <div class="block-course__content">
             <div class="block-course__content-head">
-                <p class="subtitle">{{ title }}</p>
-                <p class="title">{{ price }}$</p>
+                <a href="{{ 'course'|get_url_join:course.id }}" class="subtitle">{{ title }}</a>
+                <p class="title">
+                    {% if course_id|_in:courses_paid %}
+                        bought
+                    {% else %} 
+                        {{ price }}$
+                    {% endif %}
+                </p>
             </div>
             <div class="block-course__details">
-
+                {% include "main/component/table/table_1_type_2.html" with text=course.content|get_item:'lesson_count' text2=' Lessons' icon_url=icons.lesson_icon %}
+                {% include "main/component/table/table_1_type_2.html" with text=course.term text2='Hours' icon_url=icons.term_icon %}
+                {% include "main/component/table/table_1_type_2.html" with text=course.start_at icon_url=icons.start_at_icon %}
+                {% include "main/component/table/table_1_type_2.html" with text=course.language icon_url=icons.language_icon %}
             </div>
         </div>
     </div>
-    <div class="block-course__column">
+    <div class="block-course__column block-course__column_2">
         <div class="block-course__categories">
-
+            {% include "main/component/list/tags_list_2.html" with tags=course_tags %}
         </div>
         <div class="block-course__button">
-
+            {% if course_id|_in:courses_paid %}
+                {% include "main/component/button/button_1_type_2.html" with icon_url=icons.buy_now_icon1 text="Start now" href="course"|get_url_join:course.id class='button-1-type-2_start' %}
+            {% else %} 
+                {% include "main/component/button/button_1_type_2.html" with icon_url=icons.try_now_icon1 text="Try now" href="course"|get_url_join:course.id %}
+            {% endif %}
         </div>
     </div>
 </div>

@@ -24,9 +24,10 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser):
     id = models.AutoField(primary_key=True, editable=False)
-    first_name = models.CharField(max_length=25, null=True)
-    last_name = models.CharField(max_length=25, null=True)
-    username = models.CharField(max_length=25, null=True)
+    password = models.CharField(max_length=10, null=True, blank=True)
+    first_name = models.CharField(max_length=25, null=True, blank=True)
+    last_name = models.CharField(max_length=25, null=True, blank=True)
+    username = models.CharField(max_length=25, null=True, blank=True)
     phone = PhoneNumberField(unique=True, null=True, blank=True)
     telegram_id = models.BigIntegerField(unique=True)
     search_history = models.TextField(blank=True, null=True)

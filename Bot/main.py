@@ -25,7 +25,7 @@ dp = Dispatcher()
 async def start_command(message: types.Message):
     web_button = types.InlineKeyboardButton(
         text='🌐 Open Web App', 
-        web_app=WebAppInfo(url=WEB_APP_URL + '/user/auth' + '?bot_name=coursesotbot')
+        web_app=WebAppInfo(url=WEB_APP_URL + '/user/auth')
     )
     keyboard = types.InlineKeyboardMarkup(
         inline_keyboard=[[web_button]]

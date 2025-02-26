@@ -6,11 +6,6 @@ from django.shortcuts import render, redirect
 def auth(request):
     request.session.flush()
 
-    if request.method == 'GET':
-        bot_name = request.GET.get('bot_name')
-        request.session['_bot_name'] = bot_name
-        request.session.save()
-
     return render(request, 'user_app/auth.html')
 
 def logout(request):

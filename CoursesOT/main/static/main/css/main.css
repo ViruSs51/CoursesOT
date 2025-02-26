@@ -13,7 +13,7 @@ body, .wrapper {
     flex-direction: column;
 }
 
-.container, .head, .content, .footer {
+.container, .header, .content, .footer {
     display: flex;
 }
 .container {
@@ -23,7 +23,7 @@ body, .wrapper {
     background-color: var(--color6);
     width: 100%;
     width: 412px; /* for developing */
-    height: 100vh;
+    height: 1000%;
 }
 @media (min-width: 1024px) {
     .container {
@@ -31,10 +31,24 @@ body, .wrapper {
     }
 }
 
-.head {
-    flex-direction: column;
-    align-items: flex-start;
+.header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 .content {
     flex-grow: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 0px;
+    gap: 20px;
+    overflow: hidden hidden;
+    border-radius: 15px;
+}
+
+.courses {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
 }
